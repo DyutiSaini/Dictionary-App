@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(150deg, #0b1d51 50%, #fcecdd 50%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* align-items: center;
+  justify-content: center; */
+  background-color: #d4c9be;
+  border-radius: 20px;
+  border: 5px solid black;
+  box-shadow: 0 8px 20px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+#heading {
+  color: black;
+  max-width: 500px;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 70px;
+}
+.field-btn {
+  margin-top: 20px; /* adjust as needed */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#field {
+  height: 40px;
+  width: 336px;
+  font-size: 35px;
+  padding-left: 39px;
+  background-color: #dcc5b2;
+  padding: 0 15px;
+  line-height: 40px;
+  height: 45px;
+  border-radius: 19px;
+  outline: none;
+  transition: 0.3s ease;
+}
+#btn {
+  height: 45px;
+  width: 130px;
+  /* padding: 0 20px; */
+  font-size: 24px;
+  background-color: #0b1d51;
+  color: #dcc5b2;
+  border-radius: 39px;
+  cursor: pointer;
+  /* transition: all 0.3s ease; */
+}
+#btn:hover {
+  background-color: #1d2b6c;
+  transform: scale(1.05);
+}
+
+.result {
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  font-size: 1rem;
+  border-radius: 62px;
+  line-height: 1.7;
+}
+
+.result h2 {
+  font-size: 4.8rem;
+  color: #4b3737;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.result p {
+  margin: 8px 0;
+  font-size: 22px;
+}
+
+.result strong {
+  color: #555;
+}
+
+/* Audio player */
+.result audio {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+}
+#clearbtn {
+  background-color: #0b1d51;
+  color: #dcc5b2;
+  width: 204px;
+  height: 42px;
+  font-size: 34px;
+  text-align: center;
+  margin: 10px auto;
+  border-radius: 54px;
+  transition: all 0.3s ease;
+}
+#clearbtn:hover {
+  box-shadow: 0 0 15px rgba(3, 17, 30, 0.9), 0 0 25px rgba(44, 62, 80, 0.7);
+}
+/* === Dark Theme for Body === */
+body.dark {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1d);
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+}
+
+/* === Container Box === */
+body.dark .container {
+  background: rgba(28, 28, 30, 0.9);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+/* === Heading === */
+body.dark #heading {
+  text-align: center;
+  color: #00e5ff;
+  font-size: 70px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+/* === Input Field === */
+body.dark #field[type="text"] {
+  width: 100%;
+  background-color: #312d2a; /* ← This is your requested color */
+  border: 1px solid #444;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+body.dark #field::placeholder {
+  color: #ccc;
+}
+
+/* === Buttons (Search and Clear) === */
+body.dark #btn,
+body.dark #clearbtn {
+  background-color: #0d47a1;
+  color: #ffffff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px auto;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.dark #btn:hover,
+body.dark #clearbtn:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00e5ff66;
+}
+
+/* === Toggle Button === */
+body.dark #toggleTheme {
+  background: linear-gradient(90deg, #00e5ff33, #00e5ff11);
+  color: #ddd;
+  font-size: 15px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: none;
+  border: 1px solid #00e5ff55;
+  transition: background 0.3s ease;
+}
+
+body.dark #toggleTheme:hover {
+  background: #00e5ff22;
+  color: #ffffff;
+}
+
+/* === Result Box === */
+body.dark .result {
+  margin-top: 24px;
+  padding: 20px;
+  background: #2e2e30;
+  color: #f8f8f8;
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.08);
+  line-height: 1.7;
+}
+
+/* === Highlighted Word or Meanings === */
+body.dark .result strong {
+  color: #00e5ff;
+  text-shadow: 0 0 3px #00e5ff88;
+}
+
+/* === Error Message (Word Not Found) === */
+body.dark .error {
+  color: #ff1744;
+  font-weight: bold;
+}
+
+/* === Audio Player === */
+body.dark audio {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 12px;
+}
+#toggleTheme {
+  background-color: #0b1d51;
+  color: #dcc5b2;
+  width: 146px;
+  height: 42px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 54px;
+}
+#toggleTheme:hover {
+  box-shadow: 0 0 15px rgba(3, 17, 30, 0.9), 0 0 25px rgba(44, 62, 80, 0.7);
+}
+.heading-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* =======================
+   RESPONSIVE STYLES ONLY
+   (No existing code changed)
+   ======================= */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  #heading {
+    font-size: 55px;
+    width: auto;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  #field {
+    width: 280px;
+    font-size: 28px;
+  }
+
+  #btn {
+    width: 110px;
+    font-size: 20px;
+  }
+
+  .result h2 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Tablets & large phones */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .heading-btn {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #heading {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .field-btn {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #field {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  #btn {
+    width: 100%;
+    font-size: 22px;
+  }
+
+  #clearbtn,
+  #toggleTheme {
+    width: 100%;
+    font-size: 22px;
+  }
+
+  .result h2 {
+    font-size: 3rem;
+  }
+
+  .result p {
+    font-size: 18px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  #heading {
+    font-size: 36px;
+  }
+
+  .container {
+    border-width: 3px;
+    border-radius: 15px;
+  }
+
+  #field {
+    font-size: 20px;
+    height: 42px;
+  }
+
+  #btn {
+    font-size: 20px;
+    height: 42px;
+  }
+
+  #clearbtn,
+  #toggleTheme {
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .result h2 {
+    font-size: 2.4rem;
+  }
+
+  .result p {
+    font-size: 16px;
+  }
+
+  audio {
+    height: 40px;
+  }
+}
