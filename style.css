@@ -139,7 +139,7 @@ body.dark .container {
 body.dark #heading {
   text-align: center;
   color: #00e5ff;
-  font-size: 70px;
+  font-size: 50px;
   letter-spacing: 1.5px;
   margin-bottom: 20px;
 }
@@ -373,3 +373,4 @@ body.dark audio {
     height: 40px;
   }
 }
+
