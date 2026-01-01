@@ -136,13 +136,24 @@ body.dark .container {
 }
 
 /* === Heading === */
-body.dark #heading {
+/* body.dark #heading {
   text-align: center;
   color: #00e5ff;
   font-size: 50px;
   letter-spacing: 1.5px;
   margin-bottom: 20px;
+} */
+
+body.dark #heading {
+  text-align: center;
+  color: #00e5ff;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  white-space: normal;   /* VERY IMPORTANT */
+  word-break: break-word;
 }
+
 
 /* === Input Field === */
 body.dark #field[type="text"] {
@@ -373,4 +384,5 @@ body.dark audio {
     height: 40px;
   }
 }
+
 
